@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- head -->
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="./images/favicon/favicon.ico">
+    <title>this is derivative</title>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <!-- css and javascript files -->
+    <link href="./css/styles.css" rel="stylesheet">
+    <!-- lora font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<!-- head -->
+
+<!-- body -->
+<body>
+    <div class="container snap vertical">
+        <div class="section-1">
+            <div class="title">derivative
+                <div class="ca">ca: derJzCeYTgKVg2wHCmYw5Z1ENnosPddh3MetkBaTHxu</div>
+            </div>
+            <svg style="position: fixed;" class="svg">
+                <filter id="pixelate-mosaic" x="0%" y="0%" width="100%" height="100%">
+                    <!--pixelation map-->
+                    <feGaussianBlur stdDeviation="2" in="SourceGraphic" result="smoothed" />
+                    <feImage width="15" height="15" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAIAAAACDbGyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAWSURBVAgdY1ywgOEDAwKxgJhIgFQ+AP/vCNK2s+8LAAAAAElFTkSuQmCC" result="displacement-map" />
+                    <feTile in="displacement-map" result="pixelate-map" />
+                    <feDisplacementMap in="smoothed" in2="pixelate-map" xChannelSelector="R" yChannelSelector="G" scale="50" result="pre-final" />
+                    <feComposite operator="in" in2="SourceGraphic" />
+                </filter>
+                <filter id="pixelate" x="0" y="0">
+                    <feFlood x="4" y="4" height="2" width="2" />
+                    <feComposite width="10" height="10" />
+                    <feTile result="a" />
+                    <feComposite in="SourceGraphic" in2="a" operator="in" />
+                    <feMorphology operator="dilate" radius="5" />
+                </filter>
+            </svg>
+            <div id="movableDiv" class="filter"></div>
+        </div>
+        <!-- <div class="section-2">
+            <div class="parent">
+                <div class="item">
+                    <h2>Flexbox - Split Screen Layout</h2>
+                    <p>Example of a split screen layout that uses flexbox.</p>
+                    <p>A media query is used to detect if the virewport is below 600px, if it is then <b>flex-direction</b> is set to column-reverse, so that the image is displayed after the copy, useful on mobile devices!.</p>
+                    <p>Reduce the window size to below 600px to see an example.</p>
+                </div>
+                <div class="item last" style="background: url(https://unsplash.it/800/300) center center no-repeat; background-size: cover;"></div>
+            </div>
+        </div>
+        <div class="section-3">SCREEN 3</div>
+        <div class="section-4">SCREEN 4</div>
+        <div class="section-5">SCREEN 5</div>
+        <div class="section-6">SCREEN 6</div>
+    </div> -->
+</body>
+<!-- body -->
+<script src="./pixel.js"></script>
+<!--If you only knew the magnificence of the 3, 6 and 9, then you would have the key to the universe.-->
+</html>
+
+<!-- <div class="section-2">SCREEN 2
+    <div class="container snap">
+        <div class="section-3">Item 2.1</div>
+        <div class="section-4">Item 2.2</div>
+        <div class="section-5">Item 2.3</div>
+    </div>  
+</div> -->

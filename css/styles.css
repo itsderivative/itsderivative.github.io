@@ -1,0 +1,166 @@
+/* lora font*/
+/* <uniquifier>: Use a unique and descriptive class name
+<weight>: Use a value from 400 to 700 */
+
+.lora-<uniquifier> {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+/*scroll snap vertical*/
+.container {
+	overflow-x: auto;
+	white-space: nowrap;
+	display: flex;
+  }
+  
+  .container.vertical {
+	flex-direction: column;
+  }
+  
+  .container.snap {
+  -moz-scroll-snap-type: x mandatory;
+	scroll-snap-type: x mandatory;
+	-webkit-overflow-scrolling: touch; /* Needed to work on iOS Safari */
+  }
+  
+  .container.snap > div {
+  -moz-scroll-snap-align: start end;
+	scroll-snap-align: start end;
+  }
+  
+  .container.snap.vertical {
+	flex-direction: column;
+	-moz-scroll-snap-type: y mandatory;
+	scroll-snap-type: y mandatory;
+  }
+  
+  
+  html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+  }
+  
+  .container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+  }
+  
+  .container > div {
+	scroll-snap-align: start end;
+	min-width: 100%;
+	min-height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: #F6F5F2;
+	font-size: 20px;
+  }
+  
+  .section-1 {
+	background-color: #0A0A0A;
+  }
+  
+  .section-2 {
+	background-color: #0A0A0A;
+  }
+  
+  .section-3 {
+	background-color: #0A0A0A;
+  }
+  
+  .section-4 {
+	background-color: #0A0A0A;
+  }
+  
+  .section-5 {
+	background-color: #0A0A0A;
+  }
+  
+  .section-6 {
+	background-color: #0A0A0A;
+  }
+
+/*pixel screen1*/
+ .filter {
+	 position: fixed;
+	 width: 300px;
+	 aspect-ratio: 1;
+	 user-select: none !important;
+	 pointer-events: none;
+	 border-radius: 50%;
+	 top: 50%;
+	 left: 50%;
+	 transform: translate(-50%, -50%);
+	 backdrop-filter: url(#pixelate);
+	 box-shadow: 1px 1px 2px 1px rgb(260 260 260 / 0.2);
+}
+ html {
+	 --surface: #000;
+	 --text: #000;
+	 --hero-h: calc(100vh - 40px);
+	 background-color: var(--surface);
+	 color: var(--text);
+	 block-size: 100%;
+}
+ .section-1 {
+	 --background-color: #316760;
+	 background: url(../images/saintRosalieBrighter.jpeg) no-repeat center/cover;
+	 min-block-size: 100%;
+	 min-inline-size: 100%;
+	 margin: 0;
+	 box-sizing: border-box;
+	 font-family: system-ui, sans-serif;
+	 overflow-y: auto;
+	 display: grid;
+	 place-content: center;
+}
+
+/* screen 1*/
+.title {
+	font-family: "Lora", serif;
+	font-size: 160px;
+}
+.ca {
+	font-size: 18px;
+}
+
+/*screen 2 split screen*/
+.parent {
+	display: flex;
+	font-family: "Lora", serif;
+  }
+  .item {
+	width: 50%;
+	color: #FFF;
+	height: 100vh;
+  }
+  .last {
+	color: #222;
+  }
+  
+  @media only screen and (max-width: 1028px) {
+	.parent {
+	  flex-direction: column-reverse;  
+	}
+	.item {
+	  width: auto;
+	  height: 100vh;
+	}
+	.last {
+
+	}
+	.title {
+		font-size: 60px;
+	}
+	.ca {
+		font-size: 12px;
+	}
+	.filter {
+		display: none;
+	}
+  }
